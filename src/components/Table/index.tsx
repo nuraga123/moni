@@ -12,11 +12,7 @@ const Table = observer(() => {
 
   if (TableStore.isLoading) return <p>Загрузка...</p>;
 
-  return (
-    <div className="relative overflow-x-auto max-w-full">
-      <ItemList items={TableStore.data.items} />
-    </div>
-  );
+  return <ItemList items={TableStore.data.items} />;
 });
 
 export default Table;

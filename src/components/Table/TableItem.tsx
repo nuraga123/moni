@@ -8,12 +8,12 @@ const TableItem: React.FC<{ item: Item }> = ({ item }) => {
     <tr className="border-b border-gray-800 hover:bg-gray-900 transition">
       <td className="px-4 py-2 flex items-center gap-2">
         <Image
-          src={item.logoUrl}
+          src={item.chain.logoUrl}
           alt={item.name}
           className="w-6 h-6 rounded-full"
           width={24}
           height={24}
-          priority={true}
+          priority
         />
         <div>
           <div className="text-sm font-semibold">{item.symbol}</div>

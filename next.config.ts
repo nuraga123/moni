@@ -1,12 +1,10 @@
-/** @type {import('next').NextConfig} */
+// next.config.js
 const nextConfig = {
   images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "ipfs.io",
-        pathname: "/ipfs/**",
-      },
+    domains: [
+      "pbs.twimg.com",
+      "gateway.pinata.cloud",
+      "storage.googleapis.com", // ✅ добавляем этот домен
     ],
   },
 };
