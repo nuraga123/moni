@@ -5,8 +5,8 @@ import { Item } from "@/types";
 
 const TableItem: React.FC<{ item: Item }> = ({ item }) => {
   return (
-    <tr className="border-b border-gray-800 hover:bg-gray-900 transition">
-      <td className="px-4 py-2 flex items-center gap-2">
+    <div className="border-b border-gray-800 hover:bg-gray-900 transition">
+      <div className="px-4 py-2 flex items-center gap-2">
         <Image
           src={item.chain.logoUrl}
           alt={item.name}
@@ -21,20 +21,20 @@ const TableItem: React.FC<{ item: Item }> = ({ item }) => {
             {item.address.slice(0, 6)}...{item.address.slice(-4)}
           </div>
         </div>
-      </td>
-      <td className="px-4 py-2 text-xs">{item.createdAt}s</td>
-      <td className="px-4 py-2 text-green-500">
+      </div>
+      <div className="px-4 py-2 text-xs">{item.createdAt}s</div>
+      <div className="px-4 py-2 text-green-500">
         +{item.smartFollowersCountChange}
-      </td>
-      <td className="px-4 py-2 text-red-500">
+      </div>
+      <div className="px-4 py-2 text-red-500">
         {item.smartMentionsCountChange}
-      </td>
-      <td className="px-4 py-2">{item.txsBuyCount}</td>
-      <td className="px-4 py-2">{item.volumeBuy.USD}</td>
-      <td className="px-4 py-2">{item.liquidity.USD}</td>
-      <td className="px-4 py-2">{item.marketCap.USD}</td>
-      <td className="px-4 py-2">{item.holdersCount}</td>
-      <td className="px-4 py-2">
+      </div>
+      <div className="px-4 py-2">{item.txsBuyCount}</div>
+      <div className="px-4 py-2">{item.volumeBuy.USD}</div>
+      <div className="px-4 py-2">{item.liquidity.USD}</div>
+      <div className="px-4 py-2">{item.marketCap.USD}</div>
+      <div className="px-4 py-2">{item.holdersCount}</div>
+      <div className="px-4 py-2">
         {item.security.length &&
           item.security.map((sec, index) => (
             <span
@@ -44,13 +44,13 @@ const TableItem: React.FC<{ item: Item }> = ({ item }) => {
               {sec.shortName}
             </span>
           ))}
-      </td>
-      <td className="px-4 py-2">
+      </div>
+      <div className="px-4 py-2">
         <button className="bg-indigo-600 hover:bg-indigo-700 px-3 py-1 text-white text-sm rounded">
           Buy
         </button>
-      </td>
-    </tr>
+      </div>
+    </div>
   );
 };
 

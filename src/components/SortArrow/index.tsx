@@ -1,24 +1,30 @@
-import Image from "next/image";
+"use client";
 
-const SortArrow = ({ active = false }: { active: boolean }) => {
+import { useState } from "react";
+import PolygonDefault from "./PolygonDefault";
+import PolygonActive from "./PolygonActive";
+
+const SortArrow = () => {
+  const [activeAsc, setActiveAsc] = useState(false);
+  const toggleActiveBtn = () => setActiveAsc(!activeAsc);
+
   return (
-    <div className="flex items-center">
-      <Image
-        className="rotate-180"
-        src={`/icon/${active ? "PolygonActive.svg" : "PolygonDefault.svg"}`}
-        alt="Sort-Arrow"
-        width={7}
-        height={6}
-        priority
-      />
-      <Image
-        src={`/icon/${active ? "PolygonActive.svg" : "PolygonDefault.svg"}`}
-        alt="Sort-Arrow"
-        width={7}
-        height={6}
-        priority
-      />
-    </div>
+    <button
+      className="flex flex-col items-center my-[2.5px] mr-1 cursor-pointer h-[15px]"
+      onClick={toggleActiveBtn}
+    >
+      {activeAsc ? (
+        <div className="rotate-180 mb-[1px]">
+          <PolygonActive fill="red" />
+        </div>
+      ) : (
+        <div className="rotate-180 mb-[1px]">
+          <PolygonDefault fill="red" />
+        </div>
+      )}
+
+      {!activeAsc ? <PolygonActive /> : <PolygonDefault />}
+    </button>
   );
 };
 

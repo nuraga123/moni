@@ -17,22 +17,22 @@ const ItemList: React.FC<ItemsResponse> = ({ items }) => {
       <div className="gradient-right" /> */}
 
       {/* Заголовки */}
-      <div className="h-[52px] min-w-[1280px] grid grid-cols-[182px_100px_100px_100px_100px_120px_120px_120px_100px_100px_80px] text-sm text-white bg-[#111112] border-b border-[#27272a]">
-        <div className="py-[18px] pl-4 pr-2 text-muted flex items-end">
-          Token
+      <div className="h-[51px] min-w-[1280px] grid grid-cols-[182px_100px_100px_100px_100px_120px_120px_120px_100px_100px_80px] text-sm text-white bg-[#111112] border-b border-[#27272a]">
+        <div className="text-muted flex items-center h-[51px] w-[158px] ml-[16px] mr-[8px] py-[18px]">
+          <span className="mr-[122px]">Token</span>
         </div>
-        <div className="px-4 py-3 text-muted flex items-end">
-          <SortArrow active /> Created
+        <div className="px-[15.5px] py-[17.5px] text-muted flex items-center">
+          <SortArrow /> Created
         </div>
-        <div className="px-4 py-3 text-muted flex items-end">Smarts</div>
-        <div className="px-4 py-3 text-muted flex items-end">Mentions</div>
-        <div className="px-4 py-3 text-muted flex items-end">TXs</div>
-        <div className="px-4 py-3 text-muted flex items-end">Volume</div>
-        <div className="px-4 py-3 text-muted flex items-end">Liquidity</div>
-        <div className="px-4 py-3 text-muted flex items-end">Market Cap</div>
-        <div className="px-4 py-3 text-muted flex items-end">Holders</div>
-        <div className="px-4 py-3 text-muted flex items-end">Security</div>
-        <div className="px-4 py-3 text-muted flex items-end"></div>
+        <div className="px-4 py-3 text-muted flex items-center">Smarts</div>
+        <div className="px-4 py-3 text-muted flex items-center">Mentions</div>
+        <div className="px-4 py-3 text-muted flex items-center">TXs</div>
+        <div className="px-4 py-3 text-muted flex items-center">Volume</div>
+        <div className="px-4 py-3 text-muted flex items-center">Liquidity</div>
+        <div className="px-4 py-3 text-muted flex items-center">Market Cap</div>
+        <div className="px-4 py-3 text-muted flex items-center">Holders</div>
+        <div className="px-4 py-3 text-muted flex items-center">Security</div>
+        <div className="px-4 py-3 text-muted flex items-center"></div>
       </div>
 
       {/* Тело таблицы */}
