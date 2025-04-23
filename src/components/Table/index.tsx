@@ -2,8 +2,9 @@
 
 import { observer } from "mobx-react-lite";
 import { useEffect } from "react";
-import ItemList from "./ItemList";
 import TableStore from "@/store";
+import Header from "./Header";
+import Body from "./Body";
 
 const Table = observer(() => {
   useEffect(() => {
@@ -12,7 +13,12 @@ const Table = observer(() => {
 
   if (TableStore.isLoading) return <p>Загрузка...</p>;
 
-  return <ItemList items={TableStore.data.items} />;
+  return (
+    <table className="border border-[#27272A] bg-[#111112]">
+      <Header />
+      <Body items={TableStore.data.items} />
+    </table>
+  );
 });
 
 export default Table;

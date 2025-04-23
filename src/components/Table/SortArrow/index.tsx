@@ -10,7 +10,7 @@ const SortArrow = () => {
 
   return (
     <button
-      className="flex flex-col items-center my-[2.5px] mr-1 cursor-pointer h-[15px]"
+      className="flex flex-col items-center my-[2.5px] mr-1 cursor-pointer h-[13px]"
       onClick={toggleActiveBtn}
     >
       {activeAsc ? (
