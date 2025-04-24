@@ -1,0 +1,93 @@
+table {
+  width: 100%;
+  min-width: 1280px;
+  max-width: 1920px;
+  table-layout: fixed;
+  background-color: #111112;
+  border: 1px solid #27272a;
+  border-radius: 8px;
+  display: inline-block;
+
+  .table_borderLeft {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1px;
+      height: 23px;
+      background-color: #27272a;
+    }
+  }
+
+  thead {
+    tr {
+      display: flex;
+    }
+
+    th {
+      padding-top: 17px;
+      padding-bottom: 18px;
+      height: 50px;
+      margin-right: 8px;
+      display: flex;
+    }
+
+    th:nth-child(1) {
+      width: 172px;
+      padding-right: 122px;
+      text-align: left;
+      padding-left: 15px;
+    }
+
+    th:nth-child(2) {
+      display: flex;
+      width: 90px;
+      padding-left: 13px;
+      padding-right: 12px;
+    }
+
+    th:nth-child(3) {
+      display: flex;
+      width: 72px;
+      padding-left: 20px;
+    }
+
+    th:nth-child(4) {
+      width: 72px;
+      padding: 17px 0;
+      padding-left: 9px;
+    }
+
+    th:nth-child(5) {
+      width: 96px;
+      padding-left: 48.5px;
+    }
+    th:nth-child(6) {
+      width: 90px;
+    }
+
+    th:nth-child(7),
+    th:nth-child(8),
+    th:nth-child(9),
+    th:nth-child(10),
+    th:nth-child(11),
+    th:nth-child(12),
+    th:nth-child(13),
+    th:nth-child(14),
+    th:nth-child(15) {
+      width: 90px;
+    }
+
+    th:nth-child(16) {
+      width: 200px; // например, если там много данных
+    }
+
+    th:last-child {
+      width: 50px; // для кнопки или иконки
+    }
+  }
+}

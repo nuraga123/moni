@@ -1,5 +1,5 @@
 export const headers = [
-  { id: 1, name: "Token" },
+  { id: 1, name: "Token", isSort: false },
   { id: 2, name: "Created" },
   { id: 3, name: "Smarts" },
   { id: 4, name: "Cng" },
@@ -14,6 +14,6 @@ export const headers = [
   { id: 13, name: "Cng" },
   { id: 14, name: "Holders" },
   { id: 15, name: "Cng" },
-  { id: 16, name: "CV/CR/HNP/LB" },
-  { id: 17, name: "" },
+  { id: 16, name: "CV/CR/HNP/LB", isSort: false },
+  { id: 17, name: "", isSort: false },
 ];

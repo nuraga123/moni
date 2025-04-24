@@ -1,17 +1,23 @@
 import React from "react";
 
-interface PolygonProps {
+export interface PolygonProps {
   width?: number;
   height?: number;
   fill?: string;
+  rotate?: boolean;
+  toggleActiveBtn?: () => void;
 }
 
 const PolygonDefault: React.FC<PolygonProps> = ({
   fill = "#A1A1AA",
   width = 7,
-  height = 6,
+  height = 5,
+  rotate = 0,
+  toggleActiveBtn,
 }) => (
   <svg
+    onClick={toggleActiveBtn}
+    className={`${rotate ? "rotate-180 mb-[2px]" : ""}`}
     width={width}
     height={height}
     viewBox="0 0 7 5"
