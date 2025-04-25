@@ -4,27 +4,29 @@ import { useState } from "react";
 import PolygonDefault from "./PolygonDefault";
 import PolygonActive from "./PolygonActive";
 
-const SortArrow = () => {
-  const [active, setActive] = useState<"top" | "bottom">("top");
+type TSortState = "top" | "bottom" | "default";
 
-  const toggleActiveBtn = (act: "top" | "bottom") => setActive(act);
+const SortArrow = () => {
+  const [active, setActive] = useState<TSortState>("default");
 
   return (
     <button className="flex flex-col items-center my-[2.5px] mr-1 cursor-pointer h-[15px]">
       {active === "top" ? (
-        <PolygonActive rotate={true} fill="red" />
+        <PolygonActive
+          rotate={true}
+          toggleActiveBtn={() => setActive("default")}
+        />
       ) : (
         <PolygonDefault
-          fill="red"
           rotate={true}
-          toggleActiveBtn={() => toggleActiveBtn("top")}
+          toggleActiveBtn={() => setActive("top")}
         />
       )}
 
       {active === "bottom" ? (
-        <PolygonActive />
+        <PolygonActive toggleActiveBtn={() => setActive("default")} />
       ) : (
-        <PolygonDefault toggleActiveBtn={() => toggleActiveBtn("bottom")} />
+        <PolygonDefault toggleActiveBtn={() => setActive("bottom")} />
       )}
     </button>
   );

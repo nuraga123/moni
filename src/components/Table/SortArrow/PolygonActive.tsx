@@ -6,8 +6,10 @@ const PolygonActive: React.FC<PolygonProps> = ({
   width = 7,
   height = 5,
   rotate = 0,
+  toggleActiveBtn,
 }) => (
   <svg
+    onClick={toggleActiveBtn}
     className={`${rotate ? "rotate-180 mb-[2px]" : ""}`}
     width={width}
     height={height}

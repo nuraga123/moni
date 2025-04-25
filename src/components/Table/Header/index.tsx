@@ -12,7 +12,10 @@ const Header: React.FC = () => {
               <span>{el.name}</span>
             </th>
           ) : (
-            <th key={el.id} className="text-muted">
+            <th
+              key={el.id}
+              className={`${el.name === "Cng" ? "border-left" : ""} text-muted`}
+            >
               <SortArrow /> <span>{el.name}</span>
             </th>
           )
