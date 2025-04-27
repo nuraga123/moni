@@ -1,98 +1,97 @@
-table {
-  width: 100%;
-  min-width: 1280px;
-  max-width: 1920px;
-  table-layout: fixed;
-  background-color: #111112;
-  border: 1px solid #27272a;
-  border-radius: 8px;
-  display: inline-block;
+// table {
+//   width: 100%;
+//   height: 922px;
+//   min-width: 1280px;
+//   max-width: 1920px;
+//   table-layout: fixed;
+//   border-collapse: separate;
+//   background-color: #111112;
+//   border: 1px solid #27272a;
+//   border-radius: 8px;
+//   display: inline-block;
 
-  .border-left {
-    position: relative;
+//   .border-left {
+//     position: relative;
+//     padding-left: 8px;
+//     padding-right: 37px;
 
-    &::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 1px;
-      height: 23px;
-      background-color: #27272a;
-    }
-  }
+//     &::before {
+//       content: "";
+//       position: absolute;
+//       left: 0;
+//       top: 50%;
+//       transform: translateY(-50%);
+//       width: 1px;
+//       height: 23px;
+//       background-color: #27272a;
+//     }
+//   }
 
-  thead {
-    tr {
-      display: flex;
-    }
+//   thead {
+//     height: 52px;
+//     margin: 0;
+//     padding: 0;
 
-    th {
-      padding-top: 17px;
-      padding-bottom: 18px;
-      height: 50px;
-      margin-right: 8px;
-      display: flex;
-    }
+//     tr {
+//       display: flex;
+//       border: 1px dashed red;
+//     }
 
-    th:nth-child(1) {
-      width: 172px;
-      padding-right: 122px;
-      text-align: left;
-      padding-left: 15px;
-    }
+//     th {
+//       display: flex;
+//       height: 50px;
+//       padding-top: 18px;
+//       padding-bottom: 18px;
+//       margin-right: 8px;
+//     }
 
-    th:nth-child(2) {
-      display: flex;
-      width: 90px;
-      padding-left: 13px;
-      padding-right: 12px;
-    }
+//     th:nth-child(1) {
+//       padding-left: 16px;
+//       padding-right: 122px;
+//     }
 
-    th:nth-child(3) {
-      display: flex;
-      width: 72px;
-      padding-left: 20px;
-    }
+//     th:nth-child(2) {
+//       padding-left: 11px;
+//       padding-right: 11px;
+//     }
 
-    th:nth-child(4) {
-      width: 72px;
-      padding: 17px 0;
-      padding-left: 9px;
-    }
+//     th:nth-child(3) {
+//       padding-left: 27px;
+//     }
 
-    th:nth-child(5) {
-      width: 96px;
-      padding-left: 48.5px;
-    }
-    th:nth-child(6) {
-      width: 90px;
-    }
+//     th:nth-child(5) {
+//       padding-left: 40px;
+//     }
 
-    th:nth-child(7) {
-      width: 90px;
-      padding: 18px 20px;
-      background-color: red;
-    }
+//     th:nth-child(7) {
+//       padding-left: 46px;
+//     }
 
-    th:nth-child(8),
-    th:nth-child(9),
-    th:nth-child(10),
-    th:nth-child(11),
-    th:nth-child(12),
-    th:nth-child(13),
-    th:nth-child(14),
-    th:nth-child(15) {
-      width: 90px;
-    }
+//     th:nth-child(9) {
+//       padding-left: 25px;
+//     }
 
-    th:nth-child(16) {
-      width: 200px; // например, если там много данных
-    }
+//     th:nth-child(11) {
+//       padding-left: 19px;
+//       padding-right: 19px;
+//     }
+//     th:nth-child(12) {
+//       padding-left: 15px;
+//     }
 
-    th:last-child {
-      width: 50px; // для кнопки или иконки
-    }
-  }
-}
+//     th:nth-child(14) {
+//       padding-left: 23px;
+//     }
+
+//     th:nth-child(16) {
+//       padding-left: 15px;
+//       padding-right: 15px;
+//     }
+
+//     th:last-child {
+//       width: 138px;
+//     }
+//   }
+
+  
+// }

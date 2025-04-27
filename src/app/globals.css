@@ -6,16 +6,6 @@
   src: url("/fonts/Regular.ttf");
 }
 
-.text-muted {
-  font-family: "Inter, sans-serif";
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: 0.4px;
-  color: #999999;
-  white-space: nowrap;
-}
-
 @import "tailwindcss";
 
 :root {
@@ -64,4 +54,15 @@ body {
   background: linear-gradient(to left, #111112, transparent);
   pointer-events: none;
   z-index: 10;
+}
+
+.text {
+  font-family: "Inter, sans-serif";
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.4px;
+  color: #999999;
+  white-space: nowrap;
+  min-width: max-content;
 }

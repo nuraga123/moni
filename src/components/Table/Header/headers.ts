@@ -9,7 +9,7 @@ export const headers = [
   { id: 8, name: "Cng" },
   { id: 9, name: "Volume" },
   { id: 10, name: "Cng" },
-  { id: 11, name: "Liquidity" },
+  { id: 11, name: "Liqudity" },
   { id: 12, name: "MKT Cap" },
   { id: 13, name: "Cng" },
   { id: 14, name: "Holders" },

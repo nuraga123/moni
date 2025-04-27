@@ -38,7 +38,7 @@ interface Security {
   status: boolean;
 }
 
-interface Link {
+export interface ILink {
   name: string;
   linkUrl: string;
   logoUrl: string;
@@ -70,7 +70,7 @@ export interface Item {
   holdersCount: number;
   holdersCountChange: number;
   security: Security[];
-  links: Link[];
+  links: ILink[];
 }
 
 export interface ItemsResponse {
