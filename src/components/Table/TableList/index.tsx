@@ -2,12 +2,13 @@ import React from "react";
 import TableItem from "../TableItem";
 import { Item } from "@/types";
 
-const TableList: React.FC<{items: Item[]}> = ({ items }) => (
-    <tbody>
-      {items.map((item) => (
+const TableList: React.FC<{ items: Item[] }> = ({ items }) => (
+  <tbody>
+    <TableItem item={items[0]} />
+    {/* {items.map((item) => (
         <TableItem key={item.id} item={item} />
-      ))}
-    </tbody>
-  );
+      ))} */}
+  </tbody>
+);
 
 export default TableList;

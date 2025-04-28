@@ -13,7 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="px-4 py-6 bg-[#09090b]">{children}</body>
     </html>
   );
 }

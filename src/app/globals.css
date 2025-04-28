@@ -1,8 +1,7 @@
 @font-face {
-  font-family: "Inter, sans-serif";
+  font-family: "Inter";
   font-style: normal;
-  font-weight: 600;
-  font-display: swap;
+  font-weight: 500;
   src: url("/fonts/Regular.ttf");
 }
 
@@ -56,12 +55,11 @@ body {
   z-index: 10;
 }
 
-.text {
-  font-family: "Inter, sans-serif";
-  font-weight: 600;
+.text-muted {
+  font-family: "Inter";
   font-size: 12px;
   line-height: 16px;
-  letter-spacing: 0.4px;
+  /* letter-spacing: 0.4px; */
   color: #999999;
   white-space: nowrap;
   min-width: max-content;

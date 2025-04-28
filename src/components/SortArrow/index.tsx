@@ -10,7 +10,7 @@ const SortArrow = () => {
   const [active, setActive] = useState<TSortState>("default");
 
   return (
-    <button className="flex flex-col items-center my-[2.5px] mr-1 cursor-pointer h-[15px]">
+    <button className="flex flex-col items-center my-[2.5px] mr-1 cursor-pointer h-[11px]">
       {active === "top" ? (
         <PolygonActive
           rotate={true}

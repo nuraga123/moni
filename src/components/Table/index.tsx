@@ -6,7 +6,6 @@ import TableStore from "@/store";
 import Header from "./Header";
 import TableList from "./TableList";
 import Loading from "../Loading";
-import "./styles.scss";
 
 const Table = observer(() => {
   useEffect(() => {
@@ -16,10 +15,12 @@ const Table = observer(() => {
   if (TableStore.isLoading) return null;
 
   return (
-    <table>
-      <Header />
-      <TableList items={TableStore.data.items} />
-    </table>
+    <div className="rounded-lg border border-[#27272A] bg-[#111112]">
+      <table>
+        <Header />
+        <TableList items={TableStore.data.items} />
+      </table>
+    </div>
   );
 });
 
