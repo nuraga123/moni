@@ -4,10 +4,8 @@ import { Item } from "@/types";
 
 const TableList: React.FC<{ items: Item[] }> = ({ items }) => (
   <tbody>
-    <TableItem item={items[0]} />
-    {/* {items.map((item) => (
-        <TableItem key={item.id} item={item} />
-      ))} */}
+    {items.length > 0 &&
+      items.map((item) => <TableItem key={item.id} item={item} />)}
   </tbody>
 );
 

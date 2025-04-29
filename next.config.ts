@@ -4,7 +4,7 @@ const nextConfig = {
     domains: [
       "pbs.twimg.com",
       "gateway.pinata.cloud",
-      "storage.googleapis.com", // ✅ добавляем этот домен
+      "storage.googleapis.com",
     ],
   },
 };

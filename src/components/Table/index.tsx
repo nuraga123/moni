@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import TableStore from "@/store";
 import Header from "./Header";
 import TableList from "./TableList";
-import Loading from "../Loading";
+// import Loading from "../Loading";
 
 const Table = observer(() => {
   useEffect(() => {

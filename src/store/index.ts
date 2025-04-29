@@ -1,3 +1,5 @@
+'use client';
+
 import { makeAutoObservable } from "mobx";
 import { ItemsResponse } from "@/types";
 import { fetchData } from "@/utils/fetchData";
@@ -7,7 +9,7 @@ export class TableStore {
   isLoading = false;
 
   constructor() {
-    makeAutoObservable(this, {}, { autoBind: true });
+    makeAutoObservable(this);
   }
 
   async getData() {
@@ -16,7 +18,7 @@ export class TableStore {
       const response = await fetchData();
       this.data = response;
     } catch (error) {
-      console.error("Ошибка при получении данных:", error);
+      console.error("error: ", error);
     } finally {
       this.isLoading = false;
     }
