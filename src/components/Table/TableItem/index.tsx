@@ -42,25 +42,26 @@ const TableItem: React.FC<{ item: Item }> = ({ item }) => {
   const logoUrl: string = formatLogoUrl(item.logoUrl);
 
   return (
-    <tr className="flex border-t border-[#27272A] hover:bg-[#1F1F22] transition-colors duration-200 h-[64px] pt-[14px]">
+    <tr className="flex border-t border-[#27272A] h-[64px] pt-[14px] relative transition-colors duration-200 group hover:bg-[#1F1F22]">
       {/* token */}
-      <td className="flex items-center ml-4 mr-2  pb-[18px] pr-6  w-[158px] relative">
+      <td className="flex items-center pl-4 mr-2 pb-[18px] pr-6 w-[158px] sticky left-0 z-20 bg-[#111112] group-hover:bg-[#1F1F22] transition-colors duration-200">
         {loading && (
-          <div className="absolute inset-0 bg-transparent z-10">
+          <div className="absolute inset-0 bg-transparent z-10 group-hover:bg-[#1F1F22] transition-colors duration-200">
             <FaSpinner className="animate-spin text-gray-500 w-6 h-6" />
           </div>
         )}
+
         <Image
           src={logoUrl}
           alt={item.name}
-          className="rounded-full my-1 mr-[10px]"
+          className="rounded-full my-1 mr-[10px] group-hover:bg-[#1F1F22] transition-colors duration-200"
           width={24}
           height={24}
           loading="lazy"
           unoptimized
           onLoad={() => setLoading(false)}
         />
-        <div>
+        <div className="group-hover:bg-[#1F1F22] transition-colors duration-200">
           <div className="text-sm font-semibold">{item.symbol}</div>
           <div className="flex items-center">
             <div className="text-xs text-gray-500 mr-1">
@@ -72,7 +73,7 @@ const TableItem: React.FC<{ item: Item }> = ({ item }) => {
       </td>
 
       {/* createdAt */}
-      <td className="flex items-center justify-center text-xs mr-2 text-center pb-[34px] w-[82px]">
+      <td className="flex items-center justify-center text-xs mr-2 text-center pb-[34px] w-[82px] z-0">
         <div className="flex items-center">
           <Image
             src="/icons/clock.svg"
@@ -160,7 +161,7 @@ const TableItem: React.FC<{ item: Item }> = ({ item }) => {
       </td>
 
       {/* Security */}
-      <td className="flex items-start gap-2 text-xs px-[12px] w-[118px]">
+      <td className="flex items-start gap-2 text-xs mr-10 px-[12px] w-[118px]">
         {item.security.length > 0 &&
           item.security.map((sec, index) => (
             <span
@@ -188,7 +189,7 @@ const TableItem: React.FC<{ item: Item }> = ({ item }) => {
       </td>
 
       {/* buy button */}
-      <td className="flex items-center mr-2 w-[106px] justify-center font-medium text-[14px] leading-[14px] tracking-[0]">
+      <td className="flex items-center w-[106px] justify-center font-medium text-[14px] leading-[14px] tracking-[0]">
         <button className="cursor-pointer flex items-center bg-[#464443] hover:bg-indigo-700 ml-2 mr-4 px-4 py-2 text-white text-sm rounded w-[82px] h-[32px]">
           <Image
             className="mr-2 my-[2px] "
