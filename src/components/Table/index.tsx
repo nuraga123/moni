@@ -11,20 +11,22 @@ const Table = observer(() => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const [showLeftGradient, setShowLeftGradient] = useState(false);
-  const [showRightGradient, setShowRightGradient] = useState(true);
 
   useEffect(() => {
     TableStore.getData();
   }, []);
+
   useEffect(() => {
     const handleScroll = () => {
+      console.log("scroll");
+      console.log(scrollContainerRef.current);
       if (!scrollContainerRef.current) return;
 
-      const { scrollLeft, scrollWidth, clientWidth } =
-        scrollContainerRef.current;
+      const { scrollLeft } = scrollContainerRef.current;
+
+      alert(scrollLeft);
 
       setShowLeftGradient(scrollLeft > 0);
-      setShowRightGradient(scrollLeft < scrollWidth - clientWidth - 5);
     };
 
     const scrollContainer = scrollContainerRef.current;
@@ -43,19 +45,19 @@ const Table = observer(() => {
   if (TableStore.isLoading) return null;
 
   return (
-    <div className="rounded-lg border border-[#27272A] bg-[#111112] relative">
+    <div className="rounded-lg border border-[#27272A] bg-[#111112] relative min-w-[1280px] max-w-[1920px] w-[1696px]">
       <div
-        className="overflow-x-auto max-w-[1920px] min-w-[1280px] h-[calc(100vh-50px)]"
+        className="overflow-x-auto max-w-[1920px] min-w-[1280px] h-[922px]"
         ref={scrollContainerRef}
       >
         {showLeftGradient && (
-          <div className="absolute top-0 left-0 w-16 h-full bg-gradient-to-r from-[#111112] to-transparent z-10 pointer-events-none" />
+          <>
+            <div className="absolute top-0 left-40 w-40 h-[910px] bg-gradient-to-r from-[#111112] to-transparent pointer-events-none z-10" />
+            <div className="absolute top-0 right-2 w-40 h-[910px] bg-gradient-to-l from-[#111112] to-transparent pointer-events-none z-10" />
+          </>
         )}
 
-        {showRightGradient && (
-          <div className="absolute top-0 right-2 w-16 h-full bg-gradient-to-l from-[#111112] to-transparent z-10 pointer-events-none" />
-        )}
-        <table>
+        <table className="overflow-y-auto">
           <Header />
           <TableList items={TableStore.data.items} />
         </table>

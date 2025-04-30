@@ -6,9 +6,9 @@ import { ILink } from "@/types";
 
 export const SosialIcons = ({ links }: { links: ILink[] }) => {
   return (
-    <ul className="flex">
+    <ul className="flex w-10 bg-transparent pr-6">
       {links.map((link) => (
-        <li key={link.name} className="mr-[2px]">
+        <li key={link.name} className="mr-2">
           <Link href={link.linkUrl}>
             <Image
               src={link.logoUrl}
