@@ -42,9 +42,9 @@ const TableItem: React.FC<{ item: Item }> = ({ item }) => {
   const logoUrl: string = formatLogoUrl(item.logoUrl);
 
   return (
-    <tr className="pt-[0px] flex border-t border-[#27272A] h-[64px]  relative transition-colors duration-200 group hover:bg-[#1F1F22]">
+    <tr className="pt-[0px] flex border-t border-[#27272A] h-[64px] relative transition-colors duration-200 group hover:bg-[#1F1F22]">
       {/* token */}
-      <td className="border border-dashed flex items-center pl-4 pb-[18px] w-[158px] sticky left-0 z-20 bg-[#111112] group-hover:bg-[#1F1F22] transition-colors duration-200">
+      <td className="flex items-center pl-4 pb-[18px] w-[158px] sticky left-0 z-999 bg-[#111112] group-hover:bg-[#1F1F22] transition-colors duration-200">
         {loading && (
           <div className="absolute inset-0 bg-[#111112] z-10 group-hover:bg-[#1F1F22] transition-colors duration-200 ">
             <FaSpinner className="animate-spin text-gray-500 w-6 h-6" />
@@ -65,10 +65,13 @@ const TableItem: React.FC<{ item: Item }> = ({ item }) => {
           }}
         />
         <div className="group-hover:bg-[#1F1F22] transition-colors duration-200">
-          <div className="text-sm font-semibold max-w-[100px] overflow-hidden whitespace-nowrap">
-            {item.name}
+          <div
+            id="name"
+            className="text-sm font-semibold max-w-[100px] overflow-hidden whitespace-nowrap"
+          >
+            {item.name.length > 12 ? item.name.slice(0, 9) + "..." : item.name}
           </div>
-          <div className="flex items-center">
+          <div className="flex items-center bg-[#111112] group-hover:bg-[#1F1F22] transition-colors duration-200">
             <div className="text-xs text-gray-500 mr-1">
               {item.address.slice(0, 3)}...{item.address.slice(-3)}
             </div>
@@ -78,7 +81,7 @@ const TableItem: React.FC<{ item: Item }> = ({ item }) => {
       </td>
 
       {/* createdAt */}
-      <td className="border border-dashed flex items-center justify-center text-xs mr-2 text-center pb-[34px] w-[82px] z-0">
+      <td className="flex items-center justify-center text-xs mr-2 text-center pb-[34px] w-[82px] z-0">
         <div className="flex items-center">
           <Image
             src="/icons/clock.svg"

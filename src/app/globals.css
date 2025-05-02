@@ -72,8 +72,8 @@ body {
 .text-muted {
   font-family: "Inter";
   font-size: 12px;
-  line-height: 16px;
-  /* letter-spacing: 0.4px; */
+  line-height: 12px;
+  letter-spacing: 0.4px;
   color: #999999;
   white-space: nowrap;
   min-width: max-content;

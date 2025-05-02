@@ -5,63 +5,52 @@ import { useEffect, useRef, useState } from "react";
 import TableStore from "@/store";
 import Header from "./Header";
 import TableList from "./TableList";
-// import Loading from "../Loading";
 
 const Table = observer(() => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-
   const [showLeftGradient, setShowLeftGradient] = useState(false);
+  const [showRightGradient, setShowRightGradient] = useState(true);
 
   useEffect(() => {
     TableStore.getData();
   }, []);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      console.log("scroll");
-      console.log(scrollContainerRef.current);
-      if (!scrollContainerRef.current) return;
+  const handleScroll = () => {
+    const el = scrollContainerRef.current;
+    if (!el) return;
 
-      const { scrollLeft } = scrollContainerRef.current;
+    const isAtStart = el.scrollLeft === 0;
+    const isAtEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 1;
 
-      alert(scrollLeft);
-
-      setShowLeftGradient(scrollLeft > 0);
-    };
-
-    const scrollContainer = scrollContainerRef.current;
-    if (scrollContainer) {
-      scrollContainer.addEventListener("scroll", handleScroll);
-      handleScroll();
-    }
-
-    return () => {
-      if (scrollContainer) {
-        scrollContainer.removeEventListener("scroll", handleScroll);
-      }
-    };
-  }, []);
+    setShowLeftGradient(!isAtStart);
+    setShowRightGradient(!isAtEnd);
+  };
 
   if (TableStore.isLoading) return null;
 
   return (
-    <div className="rounded-lg border border-[#27272A] bg-[#111112] relative min-w-[1280px] max-w-[1920px] w-[1696px]">
+    <div className="relative h-[922px] border border-[#27272A] rounded-[8px] overflow-hidden">
+      {/* Scrollable container */}
       <div
-        className="overflow-x-auto max-w-[1920px] min-w-[1280px] h-[922px]"
+        className="overflow-x-auto h-full pr-4"
         ref={scrollContainerRef}
+        onScroll={handleScroll}
       >
-        {showLeftGradient && (
-          <>
-            <div className="absolute top-0 left-40 w-40 h-[910px] bg-gradient-to-r from-[#111112] to-transparent pointer-events-none z-10" />
-            <div className="absolute top-0 right-2 w-40 h-[910px] bg-gradient-to-l from-[#111112] to-transparent pointer-events-none z-10" />
-          </>
-        )}
-
-        <table className="overflow-y-auto">
+        <table className="min-w-[1280px] max-w-[1920px] w-full border-collapse  bg-[#111112]">
           <Header />
           <TableList items={TableStore.data.items} />
         </table>
       </div>
+
+      {/* Left gradient */}
+      {showLeftGradient && (
+        <div className="absolute left-40 top-0 w-30 h-[calc(100vh-74px)] bg-gradient-to-r from-[#111112] to-transparent z-10 pointer-events-none" />
+      )}
+
+      {/* Right gradient */}
+      {showRightGradient && (
+        <div className="absolute right-0 top-0 w-30 h-[calc(100vh-74px)] bg-gradient-to-l from-[#111112] to-transparent z-10 pointer-events-none" />
+      )}
     </div>
   );
 });

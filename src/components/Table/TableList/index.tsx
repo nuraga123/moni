@@ -3,7 +3,7 @@ import TableItem from "../TableItem";
 import { Item } from "@/types";
 
 const TableList: React.FC<{ items: Item[] }> = ({ items }) => (
-  <tbody>
+  <tbody className="flex flex-col">
     {items.length > 0 &&
       items.map((item) => <TableItem key={item.id} item={item} />)}
   </tbody>

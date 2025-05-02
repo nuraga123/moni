@@ -15,20 +15,29 @@ const CngElement = () => (
 );
 
 const Header: React.FC = () => (
-  <thead className="text-[#a1a1aa]">
-    <tr className="flex h-[52px] py-[0px] relative">
-      <th className="border border-dashed text-muted flex mr-2 text-left pl-4  w-[158px] sticky left-0 z-20 bg-[#111112] pr-[122px]">
-        {headers[0].name}
+  <thead className="text-[#a1a1aa] flex">
+    <tr className="flex py-[18px] h-[50px] ">
+      <th className={`
+        flex sticky left-0 z-20 w-fit pl-[16px] pr-[122px] bg-[#111112] 
+        before:absolute 
+        before:top-0 before:right-0 before:bottom-[-1px] 
+        before:w-[30px] 
+        before:translate-x-full 
+        before:transition-shadow 
+        before:content-[''] 
+        before:pointer-events-none 
+        before:box-shadow-[inset_10px_0_8px_-8px_#00000026]`}>
+        <div className="text-muted h-[16px]">{headers[0].name}</div>
       </th>
 
-      <th className="border border-dashed text-muted flex mr-2 px-3 w-[82px] z-0">
+      <th className="flex mr-2 px-3 w-[82px] z-0">
         <SortArrow />
-        {headers[1].name}
+        <div className="text-muted h-[16px]">{headers[1].name}</div>
       </th>
 
       <th className="border border-dashed text-muted flex mr-2 pl-[27px] w-[80px] z-0">
         <SortArrow />
-        {headers[2].name}
+        <div className="text-muted h-[16px]">{headers[2].name}</div>
       </th>
 
       <CngElement />
