@@ -29,27 +29,24 @@ const Table = observer(() => {
   if (TableStore.isLoading) return null;
 
   return (
-    <div className="relative h-[922px] border border-[#27272A] rounded-[8px] overflow-hidden">
-      {/* Scrollable container */}
+    <div className=" max-w-[1728px] min-w-[1260px] w-full h-[calc(100vh-50px)] border border-[#27272A] rounded-[8px]">
       <div
-        className="overflow-x-auto h-full pr-4"
+        className="overflow-x-auto h-full rounded-[8px]"
         ref={scrollContainerRef}
         onScroll={handleScroll}
       >
-        <table className="min-w-[1280px] max-w-[1920px] w-full border-collapse  bg-[#111112]">
+        <table className="border-collapse bg-[#111112]">
           <Header />
           <TableList items={TableStore.data.items} />
         </table>
       </div>
 
-      {/* Left gradient */}
       {showLeftGradient && (
-        <div className="absolute left-40 top-0 w-30 h-[calc(100vh-74px)] bg-gradient-to-r from-[#111112] to-transparent z-10 pointer-events-none" />
+        <div className="absolute left-[190px] top-[25px] w-30 h-[calc(100vh-61px)] bg-gradient-to-r from-[#111112] to-transparent z-999 pointer-events-none" />
       )}
 
-      {/* Right gradient */}
       {showRightGradient && (
-        <div className="absolute right-0 top-0 w-30 h-[calc(100vh-74px)] bg-gradient-to-l from-[#111112] to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-[27px] top-[25px] w-30 h-[calc(100vh-61px)] bg-gradient-to-l from-[#111112] to-transparent z-999 pointer-events-none" />
       )}
     </div>
   );
